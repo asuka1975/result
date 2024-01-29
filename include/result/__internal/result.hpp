@@ -1,0 +1,6 @@
+#ifndef RESULT___INTERNAL_RESULT_HPP
+#define RESULT___INTERNAL_RESULT_HPP
+
+
+
+#endif
