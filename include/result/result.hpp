@@ -12,12 +12,12 @@ public:
     template <class RightOut>
     Result<Left, RightOut> map(std::function<RightOut(Right)> func);
     template <class RightOut>
-    Result<Left, RightOut> flatMap(std::function<Result<Left, Right>(Right)> func);
+    Result<Left, RightOut> flatMap(std::function<Result<Left, RightOut>(Right)> func);
     template <class Visitor>
-    auto visit(Visitor visitor);
+    auto visit(Visitor visitor) -> decltype(visitor(std::declval<Left>()));
     Right get() const;
     Right getOr(Right defaultValue) const noexcept;
-    Right getOr(std::function<Right()> supplier) const noexcept;
+    Right getOr(std::function<Right()> supplier) const;
     bool hasValue() const noexcept;
 
 private:
