@@ -17,7 +17,7 @@ public:
     auto visit(Visitor visitor) -> decltype(visitor(std::declval<Left>()));
     Right get() const;
     Right getOr(Right defaultValue) const noexcept;
-    Right getOr(std::function<Right()> supplier) const;
+    Left getError() const;
     bool hasValue() const noexcept;
 
 private:

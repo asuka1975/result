@@ -42,12 +42,8 @@ inline Right Result<Left, Right>::getOr(Right defaultValue) const noexcept {
 }
 
 template <class Left, class Right>
-inline Right Result<Left, Right>::getOr(std::function<Right()> supplier) const {
-    auto p = std::get_if<1>(&valueOrError);
-    if(!p) {
-        return supplier();
-    }
-    return *p;
+inline Left Result<Left, Right>::getError() const {
+    return std::get<0>(valueOrError);
 }
 
 template <class Left, class Right>

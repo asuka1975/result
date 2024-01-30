@@ -24,5 +24,11 @@ TEST(CreationTest, NormalCase2) {
 }
 
 TEST(CreationTest, ErrorCase1) {
+    Error error = genResult(Error {1, "message"}).getError();
+    EXPECT_EQ(error.errorCode, 1);
+    EXPECT_EQ(error.message, "message");
+}
+
+TEST(CreationTest, ErrorCase2) {
     EXPECT_THROW(genResult(Error{1, "message"}).get(), std::bad_variant_access);
 }
