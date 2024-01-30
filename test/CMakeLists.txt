@@ -15,3 +15,4 @@ endfunction()
 
 add_test(result_creation_test)
 add_test(result_map_test)
+add_test(result_flatmap_test)

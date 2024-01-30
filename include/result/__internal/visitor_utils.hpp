@@ -3,6 +3,7 @@
 
 #include <functional>
 #include <variant>
+
 namespace asuka1975::internal::visitor_utils {
     template <class Left, class Right, class RightOut> 
     class MapVisitor {
@@ -24,10 +25,10 @@ namespace asuka1975::internal::visitor_utils {
     public:
 
         FlatMapVisitor(std::function<Result<Left, RightOut>(Right)> func) : func(std::move(func)) {}
-        std::variant<Left, RightOut> operator()(Left l) {
+        asuka1975::Result<Left, RightOut> operator()(Left l) {
             return std::variant<Left, RightOut>(std::move(l));
         }
-        std::variant<Left, RightOut> operator()(Right r) {
+        asuka1975::Result<Left, RightOut> operator()(Right r) {
             return func(std::move(r));
         }
     private:

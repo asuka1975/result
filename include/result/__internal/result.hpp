@@ -1,6 +1,7 @@
 #ifndef RESULT___INTERNAL_RESULT_HPP
 #define RESULT___INTERNAL_RESULT_HPP
 
+#include "result/result.hpp"
 #include "visitor_utils.hpp"
 
 template <class Left, class Right>
@@ -18,7 +19,7 @@ inline asuka1975::Result<Left, RightOut> asuka1975::Result<Left, Right>::map(std
 template <class Left, class Right>
 template <class RightOut>
 inline asuka1975::Result<Left, RightOut> asuka1975::Result<Left, Right>::flatMap(std::function<Result<Left, RightOut>(Right)> func) {
-    return std::visit(asuka1975::internal::visitor_utils::FlatMapVisitor<Left, Right, RightOut>{ std::move(func) }, valueOrError);
+    return asuka1975::Result<Left, RightOut>(std::visit(asuka1975::internal::visitor_utils::FlatMapVisitor<Left, Right, RightOut>{ std::move(func) }, valueOrError));
 }
 
 template <class Left, class Right>
