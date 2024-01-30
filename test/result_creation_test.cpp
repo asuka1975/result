@@ -7,12 +7,12 @@
 
 #include "Error.hpp"
 
-Result<Error, int> genResult(int n) {
-    return Result<Error, int>(n);
+asuka1975::Result<Error, int> genResult(int n) {
+    return asuka1975::Result<Error, int>(n);
 }
 
-Result<Error, int> genResult(Error err) {
-    return Result<Error, int>(err);
+asuka1975::Result<Error, int> genResult(Error err) {
+    return asuka1975::Result<Error, int>(err);
 }
 
 TEST(CreationTest, NormalCase1) {

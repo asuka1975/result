@@ -3,7 +3,7 @@
 
 #include <functional>
 #include <variant>
-namespace internal::visitor_utils {
+namespace asuka1975::internal::visitor_utils {
     template <class Left, class Right, class RightOut> 
     class MapVisitor {
     public:

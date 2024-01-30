@@ -7,11 +7,11 @@
 
 #include "Error.hpp"
 
-Result<Error, int> div10(int n) {
+asuka1975::Result<Error, int> div10(int n) {
     if(n == 0) {
-        return Result<Error, int>(Error {1, "cannot divide by zero"});
+        return asuka1975::Result<Error, int>(Error {1, "cannot divide by zero"});
     } else {
-        return Result<Error, int>(10 / n);
+        return asuka1975::Result<Error, int>(10 / n);
     }
 }
 

@@ -1,4 +1,4 @@
-# Result
+# Asuka1975's Software Collection - Result
 
 The monadic result library.
 
