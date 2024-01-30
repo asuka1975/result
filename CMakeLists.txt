@@ -8,3 +8,4 @@ add_library(result src/result/result.cpp)
 
 target_include_directories(result PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+add_subdirectory(test)
