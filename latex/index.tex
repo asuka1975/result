@@ -1,0 +1,26 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+ The monadic result library.
+
+This library provide result object with error supported monadic operation.
+
+You can use this class as following code\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Result<Error, Value1> result = processSomething();}
+\DoxyCodeLine{}
+\DoxyCodeLine{Output output = result}
+\DoxyCodeLine{    .map<Value2>([](Value1 v) \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} transformValue1(v);}
+\DoxyCodeLine{    \})}
+\DoxyCodeLine{    .flatMap<Value3>([](Value2 v) -\/> Result<Error, Value3> \{}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}(!checkValue2(v)) \{}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} createError(v);}
+\DoxyCodeLine{        \}}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} transformValue2(v);}
+\DoxyCodeLine{    \})}
+\DoxyCodeLine{    .visit(processFinally);}
+
+\end{DoxyCode}
+ 

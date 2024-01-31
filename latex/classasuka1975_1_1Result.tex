@@ -1,0 +1,242 @@
+\hypertarget{classasuka1975_1_1Result}{}\doxysection{asuka1975\+::Result$<$ Left, Right $>$ Class Template Reference}
+\label{classasuka1975_1_1Result}\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+
+
+\mbox{\hyperlink{classasuka1975_1_1Result}{Result}} class which has monadic operation.  
+
+
+
+
+{\ttfamily \#include $<$result.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classasuka1975_1_1Result_aeaa9dcac699fe0cc73fef9ffe36b580c}{Result}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classasuka1975_1_1Result_a8ee27d6a6ec916bad5452fbb9555eb14}{Result}} (std\+::variant$<$ Left, Right $>$ value\+Or\+Error)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Right\+Out $>$ }\\\mbox{\hyperlink{classasuka1975_1_1Result}{Result}}$<$ Left, Right\+Out $>$ \mbox{\hyperlink{classasuka1975_1_1Result_a92ebdc0e0e310cb61031f529459db877}{map}} (std\+::function$<$ Right\+Out(Right)$>$ func)
+\begin{DoxyCompactList}\small\item\em Apply func to value\+Or\+Error and create a new \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Right\+Out $>$ }\\\mbox{\hyperlink{classasuka1975_1_1Result}{Result}}$<$ Left, Right\+Out $>$ \mbox{\hyperlink{classasuka1975_1_1Result_a7870a2d6575bebe97027e36111272a87}{flat\+Map}} (std\+::function$<$ \mbox{\hyperlink{classasuka1975_1_1Result}{Result}}$<$ Left, Right\+Out $>$(Right)$>$ func)
+\begin{DoxyCompactList}\small\item\em Apply func to value\+Or\+Error and return a value func returning. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Visitor $>$ }\\auto \mbox{\hyperlink{classasuka1975_1_1Result_a22088b4e08ac93fbae3e278f26dd2d81}{visit}} (Visitor visitor) -\/$>$ decltype(visitor(std\+::declval$<$ Left $>$()))
+\begin{DoxyCompactList}\small\item\em Applies the visitor to the value\+Or\+Error. \end{DoxyCompactList}\item 
+Right \mbox{\hyperlink{classasuka1975_1_1Result_ab7e10296699dc4aa8011dc384e020cd4}{get}} () const
+\begin{DoxyCompactList}\small\item\em get a normal value \end{DoxyCompactList}\item 
+Right \mbox{\hyperlink{classasuka1975_1_1Result_a0b4f9984aacdc9624fd2d5bcdc1300dd}{get\+Or}} (Right default\+Value) const noexcept
+\begin{DoxyCompactList}\small\item\em Get a normal value or default normal one. \end{DoxyCompactList}\item 
+Left \mbox{\hyperlink{classasuka1975_1_1Result_a8d4eb2ec0f87a134d71dba0ba22d2a00}{get\+Error}} () const
+\begin{DoxyCompactList}\small\item\em Get an abnormal value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classasuka1975_1_1Result_a2e9ad0bf7adaa8363c219f03ae189fd8}{has\+Value}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Whether it has normal or abnormal value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class Left, class Right$>$\newline
+class asuka1975\+::\+Result$<$ Left, Right $>$}
+
+\mbox{\hyperlink{classasuka1975_1_1Result}{Result}} class which has monadic operation. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Left} & Abnormal value \\
+\hline
+{\em Right} & Normal value \\
+\hline
+\end{DoxyTemplParams}
+
+
+Definition at line 32 of file result.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classasuka1975_1_1Result_aeaa9dcac699fe0cc73fef9ffe36b580c}\label{classasuka1975_1_1Result_aeaa9dcac699fe0cc73fef9ffe36b580c}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!Result@{Result}}
+\index{Result@{Result}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+\mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::\mbox{\hyperlink{classasuka1975_1_1Result}{Result}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} object. 
+
+The internal value is initialized by the default value of Right. \mbox{\Hypertarget{classasuka1975_1_1Result_a8ee27d6a6ec916bad5452fbb9555eb14}\label{classasuka1975_1_1Result_a8ee27d6a6ec916bad5452fbb9555eb14}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!Result@{Result}}
+\index{Result@{Result}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{Result()}{Result()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+\mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::\mbox{\hyperlink{classasuka1975_1_1Result}{Result}} (\begin{DoxyParamCaption}\item[{std\+::variant$<$ Left, Right $>$}]{value\+Or\+Error }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+Or\+Error} & Normal or Abnormal value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classasuka1975_1_1Result_a7870a2d6575bebe97027e36111272a87}\label{classasuka1975_1_1Result_a7870a2d6575bebe97027e36111272a87}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!flatMap@{flatMap}}
+\index{flatMap@{flatMap}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{flatMap()}{flatMap()}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+template$<$class Right\+Out $>$ \\
+\mbox{\hyperlink{classasuka1975_1_1Result}{Result}}$<$Left, Right\+Out$>$ \mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::flat\+Map (\begin{DoxyParamCaption}\item[{std\+::function$<$ \mbox{\hyperlink{classasuka1975_1_1Result}{Result}}$<$ Left, Right\+Out $>$(Right)$>$}]{func }\end{DoxyParamCaption})}
+
+
+
+Apply func to value\+Or\+Error and return a value func returning. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classasuka1975_1_1Result_a92ebdc0e0e310cb61031f529459db877}{Result$<$\+Left, Right$>$\+::map}}
+\end{DoxySeeAlso}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Right\+Out} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result$<$\+Left, Right\+Out$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classasuka1975_1_1Result_ab7e10296699dc4aa8011dc384e020cd4}\label{classasuka1975_1_1Result_ab7e10296699dc4aa8011dc384e020cd4}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!get@{get}}
+\index{get@{get}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+Right \mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get a normal value 
+
+\begin{DoxyReturn}{Returns}
+Right 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+variant\+\_\+access} & If \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} has abnormal value. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classasuka1975_1_1Result_a8d4eb2ec0f87a134d71dba0ba22d2a00}\label{classasuka1975_1_1Result_a8d4eb2ec0f87a134d71dba0ba22d2a00}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!getError@{getError}}
+\index{getError@{getError}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{getError()}{getError()}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+Left \mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::get\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get an abnormal value. 
+
+\begin{DoxyReturn}{Returns}
+Left 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+variant\+\_\+access} & If \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} has normal value. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classasuka1975_1_1Result_a0b4f9984aacdc9624fd2d5bcdc1300dd}\label{classasuka1975_1_1Result_a0b4f9984aacdc9624fd2d5bcdc1300dd}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!getOr@{getOr}}
+\index{getOr@{getOr}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{getOr()}{getOr()}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+Right \mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::get\+Or (\begin{DoxyParamCaption}\item[{Right}]{default\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Get a normal value or default normal one. 
+
+\begin{DoxyReturn}{Returns}
+Right 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::bad\+\_\+variant\+\_\+access} & If \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} has abnormal value. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classasuka1975_1_1Result_a2e9ad0bf7adaa8363c219f03ae189fd8}\label{classasuka1975_1_1Result_a2e9ad0bf7adaa8363c219f03ae189fd8}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!hasValue@{hasValue}}
+\index{hasValue@{hasValue}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{hasValue()}{hasValue()}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+bool \mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::has\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Whether it has normal or abnormal value. 
+
+\begin{DoxyReturn}{Returns}
+true normal value 
+
+false abnormal value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classasuka1975_1_1Result_a92ebdc0e0e310cb61031f529459db877}\label{classasuka1975_1_1Result_a92ebdc0e0e310cb61031f529459db877}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!map@{map}}
+\index{map@{map}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{map()}{map()}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+template$<$class Right\+Out $>$ \\
+\mbox{\hyperlink{classasuka1975_1_1Result}{Result}}$<$Left, Right\+Out$>$ \mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::map (\begin{DoxyParamCaption}\item[{std\+::function$<$ Right\+Out(Right)$>$}]{func }\end{DoxyParamCaption})}
+
+
+
+Apply func to value\+Or\+Error and create a new \mbox{\hyperlink{classasuka1975_1_1Result}{Result}} object. 
+
+If value\+Or\+Error has normal value, this method applies func to it. On the other hand, if value\+Or\+Error has abnormal value, this method do nothing.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Right\+Out} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em func} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Result$<$\+Left, Right\+Out$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classasuka1975_1_1Result_a22088b4e08ac93fbae3e278f26dd2d81}\label{classasuka1975_1_1Result_a22088b4e08ac93fbae3e278f26dd2d81}} 
+\index{asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}!visit@{visit}}
+\index{visit@{visit}!asuka1975::Result$<$ Left, Right $>$@{asuka1975::Result$<$ Left, Right $>$}}
+\doxysubsubsection{\texorpdfstring{visit()}{visit()}}
+{\footnotesize\ttfamily template$<$class Left , class Right $>$ \\
+template$<$class Visitor $>$ \\
+auto \mbox{\hyperlink{classasuka1975_1_1Result}{asuka1975\+::\+Result}}$<$ Left, Right $>$\+::visit (\begin{DoxyParamCaption}\item[{Visitor}]{visitor }\end{DoxyParamCaption}) -\/$>$  decltype(visitor(std\+::declval$<$ Left $>$()))}
+
+
+
+Applies the visitor to the value\+Or\+Error. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Visitor} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em visitor} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decltype(visitor(std\+::declval$<$\+Left$>$())) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/result/\mbox{\hyperlink{result_8hpp}{result.\+hpp}}\end{DoxyCompactItemize}
