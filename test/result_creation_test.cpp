@@ -32,3 +32,7 @@ TEST(CreationTest, ErrorCase1) {
 TEST(CreationTest, ErrorCase2) {
     EXPECT_THROW(genResult(Error{1, "message"}).get(), std::bad_variant_access);
 }
+
+TEST(CreationTest, ErrorCase3) {
+    EXPECT_FALSE(genResult(Error {1, "message"}).hasValue());
+}
