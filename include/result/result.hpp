@@ -1,3 +1,14 @@
+/**
+ * @file result.hpp
+ * @author asuka1975
+ * @brief 
+ * @version 1.0
+ * @date 2024-01-31
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #ifndef RESULT_RESULT_HPP
 #define RESULT_RESULT_HPP
 
