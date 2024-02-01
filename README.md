@@ -1,4 +1,4 @@
-[![CMake on a single platform](https://github.com/asuka1975/result/actions/workflows/cmake-single-platform.yml/badge.svg)](https://github.com/asuka1975/result/actions/workflows/cmake-single-platform.yml)
+[![test](https://github.com/asuka1975/result/actions/workflows/test.yml/badge.svg)](https://github.com/asuka1975/result/actions/workflows/test.yml)
 ![](https://img.shields.io/github/license/asuka1975/result)
 ![](https://img.shields.io/github/repo-size/asuka1975/result)
 ![](https://img.shields.io/github/downloads/asuka1975/result/total)
